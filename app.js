@@ -14,8 +14,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/:page', function(req, res){
 
-	req.params.page;
-	fs.readFile('/:page', function(err, data){ // this reads the data.txt file
+	fs.readFile(req.params.page, function(err, data){ // this reads the data.txt file
 	    res.header('Content-Type', 'text/html'); // this tells the server to look for text
 		res.send(data);
 	});
